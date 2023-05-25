@@ -1,0 +1,16 @@
+.drum-pad {
+  background-color: #f1f1f1;
+  padding: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.drum-pad:hover {
+  background-color: #e1e1e1;
+}
+
+.clip {
+  display: none;
+}
