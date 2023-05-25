@@ -11,7 +11,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5;
+  background: linear-gradient(to bottom, #FF7F50, #FFA500);
 }
 
 .App-header {
@@ -42,4 +42,42 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.signature {
+  font-style: italic;
+  font-size: 14px;
+  color: black;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title:before,
+.title:after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: #40ff40;
+  margin: 0 auto;
+  width: 100px;
+}
+
+.title:before {
+  margin-bottom: 10px;
+}
+
+.title:after {
+  margin-top: 10px;
 }

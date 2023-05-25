@@ -6,7 +6,8 @@ class DrumMachine extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayText: '',
+      displayText: 'Selecciona una letra', // Texto inicial
+      volume: 50, // Agrega el estado del volumen inicial
     };
   }
 
@@ -23,12 +24,19 @@ class DrumMachine extends React.Component {
     const drumPad = document.getElementById(key.toUpperCase());
     if (drumPad) {
       drumPad.playAudio();
+      if (this.state.displayText === 'Selecciona una letra') {
+        this.setState({ displayText: '' }); // Elimina el texto inicial al empezar a utilizar la aplicación
+      }
       this.updateDisplay(drumPad.getAttribute('data-description'));
     }
   };
 
   updateDisplay = (displayText) => {
     this.setState({ displayText });
+  };
+
+  updateVolume = (volume) => {
+    this.setState({ volume });
   };
 
   render() {
@@ -42,6 +50,7 @@ class DrumMachine extends React.Component {
           keyTrigger="Q"
           updateDisplay={this.updateDisplay}
           dataDescription="Heater 1"
+          data-keytrigger
         />
 
         {/* DrumPad 2 */}
@@ -51,6 +60,7 @@ class DrumMachine extends React.Component {
           keyTrigger="W"
           updateDisplay={this.updateDisplay}
           dataDescription="Heater 2"
+          data-keytrigger
         />
 
         {/* DrumPad 3 */}
@@ -60,6 +70,7 @@ class DrumMachine extends React.Component {
           keyTrigger="E"
           updateDisplay={this.updateDisplay}
           dataDescription="Heater 3"
+          data-keytrigger
         />
 
         {/* DrumPad 4 */}
@@ -69,6 +80,7 @@ class DrumMachine extends React.Component {
           keyTrigger="A"
           updateDisplay={this.updateDisplay}
           dataDescription="Heater 4"
+          data-keytrigger
         />
 
         {/* DrumPad 5 */}
@@ -78,6 +90,7 @@ class DrumMachine extends React.Component {
           keyTrigger="S"
           updateDisplay={this.updateDisplay}
           dataDescription="Clap"
+          data-keytrigger
         />
 
         {/* DrumPad 6 */}
@@ -87,6 +100,7 @@ class DrumMachine extends React.Component {
           keyTrigger="D"
           updateDisplay={this.updateDisplay}
           dataDescription="Open-HH"
+          data-keytrigger
         />
 
         {/* DrumPad 7 */}
@@ -96,6 +110,7 @@ class DrumMachine extends React.Component {
           keyTrigger="Z"
           updateDisplay={this.updateDisplay}
           dataDescription="Kick-n'-Hat"
+          data-keytrigger
         />
 
         {/* DrumPad 8 */}
@@ -105,6 +120,7 @@ class DrumMachine extends React.Component {
           keyTrigger="X"
           updateDisplay={this.updateDisplay}
           dataDescription="Kick"
+          data-keytrigger
         />
 
         {/* DrumPad 9 */}
@@ -114,6 +130,7 @@ class DrumMachine extends React.Component {
           keyTrigger="C"
           updateDisplay={this.updateDisplay}
           dataDescription="Closed-HH"
+          data-keytrigger
         />
       </div>
     );

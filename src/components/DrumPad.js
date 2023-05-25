@@ -38,7 +38,7 @@ class DrumPad extends React.Component {
 
     return (
       <div
-        className="drum-pad"
+        className={`drum-pad ${this.props['data-keytrigger'] ? 'data-keytrigger' : ''}`}
         id={id}
         onClick={this.handleClick}
       >
