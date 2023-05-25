@@ -6,7 +6,7 @@ class DrumMachine extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayText: 'Selecciona una letra', // Texto inicial
+      displayText: 'Presiona', // Texto inicial
       volume: 50, // Agrega el estado del volumen inicial
     };
   }
@@ -24,7 +24,7 @@ class DrumMachine extends React.Component {
     const drumPad = document.getElementById(key.toUpperCase());
     if (drumPad) {
       drumPad.playAudio();
-      if (this.state.displayText === 'Selecciona una letra') {
+      if (this.state.displayText === 'Presiona') {
         this.setState({ displayText: '' }); // Elimina el texto inicial al empezar a utilizar la aplicación
       }
       this.updateDisplay(drumPad.getAttribute('data-description'));
