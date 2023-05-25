@@ -22,6 +22,8 @@
 }
 
 .drum-pad {
+  width: 10px;
+  height: 10px;
   background-color: #5c94e9;
   display: flex;
   align-items: center;
